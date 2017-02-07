@@ -3,4 +3,22 @@
 
 body {
     background: $beige;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    color: $beige;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+header {
+    background: $black;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.4);
+    #logo {
+        padding: 15px 0;
+        text-align: center;
+    }
 }
