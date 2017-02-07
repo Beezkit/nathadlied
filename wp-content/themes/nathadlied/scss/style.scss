@@ -22,3 +22,19 @@ header {
         text-align: center;
     }
 }
+
+@media all and (min-width: 768px) {
+    header {
+        #logo {
+            float: left;
+            img {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            h1 {
+                display: inline-block;
+                padding-left: 15px;
+            }
+        }
+    }
+}

@@ -30,5 +30,9 @@
                 <h1><?php bloginfo( 'description' ); ?></h1>
             <?php } ?>
         </div>
+        <nav>
+            <?php wp_nav_menu( array( 'theme_location' => 'Top' ) ); ?>
+        </nav>
+        <div class="clearfix"></div>
     </div>
 </header>
