@@ -43,6 +43,34 @@ function create_post_type() {
 	);
 }
 
+// CUSTOM POST TYPE NATH
+register_post_type(
+   'Nath',
+   array(
+        'label' => 'Nath',
+        'labels' => array(
+            'name' => 'Nath',
+            'singular_name' => 'Nath',
+            'all_items' => 'Nath',
+            'add_new_item' => 'Nath',
+            'edit_item' => 'Nath',
+            'new_item' => 'Nath',
+            'view_item' => 'Nath',
+            'search_items' => 'Nath',
+            'not_found' => 'Nath',
+            'not_found_in_trash'=> 'Nath'
+            ),
+        'public' => true,
+        'capability_type' => 'post',
+        'supports' => array(
+        	'title',
+        	'editor',
+            'thumbnail'
+        ),
+        'has_archive' => true
+    )
+);
+
 // CUSTOM POST TYPE PRINT
 register_post_type(
    'Print',

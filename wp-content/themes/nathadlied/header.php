@@ -2,7 +2,6 @@
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <link rel="canonical" href="http://www" />
     <title><?php wp_title(); ?></title>
     <meta http-equiv="content-language" content="fr-FR" />
     <meta name="author" content="NathaDlie D" />

@@ -19,4 +19,30 @@
         </div>
         <?php endwhile; } ?>
 
+        <div id="nath">
+            <div class="container">
+                <?php // The Query
+                $the_query = new WP_Query( array( 'post_type' => 'Nath' ) );
+
+                if ( $the_query->have_posts() ) { ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    <h3><?php the_title(); ?></h3>
+                    <?php the_content(); ?>
+                <?php endwhile; } ?>
+            </div>
+        </div>
+
+        <div id="print">
+            <div class="container">
+                <?php // The Query
+                $the_query = new WP_Query( array( 'post_type' => 'Print' ) );
+
+                if ( $the_query->have_posts() ) { ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    <h3><?php the_title(); ?></h3>
+                    <?php the_content(); ?>
+                <?php endwhile; } ?>
+            </div>
+        </div>
+
 <?php get_footer(); ?>

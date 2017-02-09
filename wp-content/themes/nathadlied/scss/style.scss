@@ -12,6 +12,10 @@ h1 {
     font-size: 18px;
     font-weight: 300;
 }
+h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
 
 header {
     background: $black;
@@ -108,6 +112,35 @@ header {
     }
 }
 
+#nath {
+    padding-top: 90px;
+    h3 {
+        font-size: 24px;
+        font-weight: 100;
+        span {
+            font-weight: 500;
+            color: $pink;
+        }
+    }
+}
+
+#print {
+    background: $black;
+    padding: 55px 0;
+    h3 {
+        color: $green;
+        text-align: center;
+        font-size: 18px;
+    }
+    .border-title {
+        display: block;
+        width: 200px;
+        height: 1px;
+        margin: auto;
+        background: $pink;
+    }
+}
+
 @keyframes bouncy {
     50% {
         transform: translate(0px, 10px);
@@ -144,6 +177,11 @@ header {
         }
         .scroll-bot {
             margin: 90px auto 0;
+        }
+    }
+    #nath {
+        h3 {
+            font-size: 48px;
         }
     }
 }
