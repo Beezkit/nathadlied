@@ -22,3 +22,23 @@ add_filter('excerpt_more', 'new_excerpt_more');
 register_nav_menus( array(
  'Top' => 'Navigation principale'
 ) );
+
+// CUSTOM POST TYPE PRESENTATION
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	register_post_type( 'PRESENTATION',
+		array(
+			'labels' => array(
+				'name' => __( 'Ma présentation' ),
+				'singular_name' => __( 'Ma présentation' )
+			),
+		'public' => true,
+		'has_archive' => true,
+        'supports' => array(
+        	'title',
+        	'editor',
+            'thumbnail'
+        ),
+		)
+	);
+}
