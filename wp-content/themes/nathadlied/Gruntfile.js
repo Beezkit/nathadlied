@@ -53,7 +53,8 @@ module.exports = function(grunt) {
       all: {
         src: 'images/*.png',
         dest: 'images/sprite.png',
-        destCss: 'scss/_sprites.scss'
+        destCss: 'scss/_sprites.scss',
+        padding: 20
       }
     }
 

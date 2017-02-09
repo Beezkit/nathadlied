@@ -83,12 +83,34 @@ header {
         }
     }
     .scroll-bot {
+        position: relative;
         display: block;
         width: $polygone-width;
         height: $polygone-height;
         margin: 35px auto 0;
         background-position: $polygone-x $polygone-offset-y;
         background-image: url($polygone-image);
+        .icon-down {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: $down-width;
+            height: $down-height;
+            margin: auto;
+            background-position: $down-offset-x $down-offset-y;
+            background-image: url($down-image);
+            z-index: 100;
+            animation: bouncy 1.5s infinite ease-in-out;
+        }
+    }
+}
+
+@keyframes bouncy {
+    50% {
+        transform: translate(0px, 10px);
     }
 }
 

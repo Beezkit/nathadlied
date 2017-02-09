@@ -13,7 +13,7 @@
                     <p><?php bloginfo( 'description' ); ?></p>
                 </div>
                 <div class="scroll-bot">
-
+                    <div class="icon-down"></div>
                 </div>
             </div>
         </div>
