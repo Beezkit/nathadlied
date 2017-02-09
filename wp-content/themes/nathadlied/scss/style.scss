@@ -1,5 +1,6 @@
 @import "_reset.scss";
 @import "_color.scss";
+@import "_sprites.scss";
 
 body {
     background: $beige;
@@ -20,20 +21,74 @@ header {
     #logo {
         padding: 15px 0;
         text-align: center;
+        img {
+            display: block;
+            margin: auto;
+        }
+        h1 {
+            margin-top: 15px;
+        }
     }
 }
 
 #presentation {
+    position: relative;
     height: 290px;
-    padding: 100px 0;
-    background-size: cover;
+    padding: 65px 0;
+    background-color: $black;
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: url('http://nathadlied.local/wp-content/uploads/2017/02/fond.jpg');
+        background-size: cover;
+        opacity: 0.3;
+        z-index: 0;
+    }
     .content {
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            margin: 0 auto 20px;
+            background: $pink;
+        }
+        &:after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 1px;
+            margin: 20px auto 0;
+            background: $pink;
+        }
         p {
             text-align: center;
+            font-size: 36px;
+            font-weight: 100;
+            color: $beige;
+            &:last-child {
+                font-size: 12px;
+            }
         }
         h2 {
+            padding: 15px 0;
             text-align: center;
+            color: $beige;
+            font-size: 36px;
         }
+    }
+    .scroll-bot {
+        display: block;
+        width: $polygone-width;
+        height: $polygone-height;
+        margin: 35px auto 0;
+        background-position: $polygone-x $polygone-offset-y;
+        background-image: url($polygone-image);
     }
 }
 
@@ -41,14 +96,32 @@ header {
     header {
         #logo {
             float: left;
-            img {
-                display: inline-block;
-                vertical-align: middle;
+        }
+    }
+    #presentation {
+        height: 500px;
+        padding: 115px 0;
+        .content {
+            &:before {
+                width: 70%;
+                margin: 0 auto 45px;
             }
-            h1 {
-                display: inline-block;
-                padding-left: 15px;
+            &:after {
+                width: 40%;
+                margin: 45px auto 0;
             }
+            p {
+                font-size: 60px;
+                &:last-child {
+                    font-size: 18px;
+                }
+            }
+            h2 {
+                font-size: 60px;
+            }
+        }
+        .scroll-bot {
+            margin: 90px auto 0;
         }
     }
 }
