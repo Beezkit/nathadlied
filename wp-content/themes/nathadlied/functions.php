@@ -42,3 +42,31 @@ function create_post_type() {
 		)
 	);
 }
+
+// CUSTOM POST TYPE PRINT
+register_post_type(
+   'Print',
+   array(
+        'label' => 'Mes Print',
+        'labels' => array(
+            'name' => 'Mes Print',
+            'singular_name' => 'Mes Print',
+            'all_items' => 'Tous Mes Print',
+            'add_new_item' => 'Ajouter un Print',
+            'edit_item' => 'Éditer le Print',
+            'new_item' => 'Nouveau Print',
+            'view_item' => 'Voir le print',
+            'search_items' => 'Rechercher parmi les Print',
+            'not_found' => 'Pas de print trouvée',
+            'not_found_in_trash'=> 'Pas de print dans la corbeille'
+            ),
+        'public' => true,
+        'capability_type' => 'post',
+        'supports' => array(
+        	'title',
+        	'editor',
+            'thumbnail'
+        ),
+        'has_archive' => true
+    )
+);
