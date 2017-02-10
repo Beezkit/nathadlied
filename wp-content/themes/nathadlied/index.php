@@ -27,7 +27,10 @@
                 if ( $the_query->have_posts() ) { ?>
                 <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                     <h3><?php the_title(); ?></h3>
-                    <?php the_content(); ?>
+                    <div class="thumbnail">
+                        <?php the_post_thumbnail(); ?>
+                        <?php the_content(); ?>
+                    </div>
                 <?php endwhile; } ?>
             </div>
         </div>
