@@ -16,6 +16,9 @@ h3 {
     margin-bottom: 20px;
     font-size: 24px;
 }
+a, a:hover, a:focus, a:active, a:visited {
+    text-decoration: none;
+}
 
 header {
     background: $black;
@@ -170,6 +173,44 @@ header {
     header {
         #logo {
             float: left;
+            img {
+                display: block;
+                width: 205px;
+            }
+        }
+        nav {
+            float: right;
+            height: 130px;
+            ul {
+                li {
+                    display: inline-block;
+                    a {
+                        display: inline-block;
+                        height: 130px;
+                        padding: 50px 15px;
+                        color: $beige;
+                        z-index: 10;
+                    }
+                }
+                li.current-menu-item {
+                    a {
+                        position: relative;
+                        color: $black;
+                        &:before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: -18px;
+                            width: $fond-menu-width;
+                            height: $fond-menu-height;
+                            background-position: $fond-menu-offset-x $fond-menu-offset-y;
+                            background-image: url($down-image);
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
         }
     }
     #presentation {
