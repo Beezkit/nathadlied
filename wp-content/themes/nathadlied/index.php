@@ -32,6 +32,19 @@
                         <?php the_content(); ?>
                     </div>
                 <?php endwhile; } ?>
+
+                <?php $competences= get_field('competence');
+            		if( $competences ):  ?>
+                    <ul class="competences">
+            		  <?php foreach( $competences as $competence ): ?>
+            		  <li>
+                          <h4><?php echo $competence['titre']; ?> :</h4>
+                          <div class="width<?php echo $competence['pourcentage']; ?>"></div>
+                      </li>
+            		  <?php endforeach; ?>
+                    </ul>
+            	<?php endif; ?>
+
             </div>
         </div>
 
