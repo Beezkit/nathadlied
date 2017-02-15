@@ -75,10 +75,21 @@ $polygone-total-width: 806px;
 $polygone-total-height: 648px;
 $polygone-image: 'images/sprite.png';
 $polygone: (689px, 334px, -689px, -334px, 63px, 71px, 806px, 648px, 'images/sprite.png', 'polygone', );
+$right-name: 'right';
+$right-x: 750px;
+$right-y: 425px;
+$right-offset-x: -750px;
+$right-offset-y: -425px;
+$right-width: 54px;
+$right-height: 11px;
+$right-total-width: 806px;
+$right-total-height: 648px;
+$right-image: 'images/sprite.png';
+$right: (750px, 425px, -750px, -425px, 54px, 11px, 806px, 648px, '../images/sprite.png', 'right', );
 $spritesheet-width: 806px;
 $spritesheet-height: 648px;
 $spritesheet-image: 'images/sprite.png';
-$spritesheet-sprites: ($avatar-nath, $down, $fond-menu-hover, $fond-menu, $logo, $polygone, );
+$spritesheet-sprites: ($avatar-nath, $down, $fond-menu-hover, $fond-menu, $logo, $polygone, $right, );
 $spritesheet: (806px, 648px, 'images/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables

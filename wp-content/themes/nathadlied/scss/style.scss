@@ -13,6 +13,13 @@ h1 {
     font-size: 18px;
     font-weight: 300;
 }
+h2 {
+    margin-bottom: 15px;
+    font-size: 60px;
+    font-weight: 500;
+    color: $beige;
+    text-align: center;
+}
 h3 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -25,6 +32,31 @@ h4 {
 }
 a, a:hover, a:focus, a:active, a:visited {
     text-decoration: none;
+}
+.border-title {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 1px;
+    margin: auto;
+    margin-bottom: 35px;
+    background: $pink;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        background-color: $pink;
+    }
 }
 
 header {
@@ -233,17 +265,57 @@ header {
 #print {
     background: $black;
     padding: 55px 0;
-    h3 {
-        color: $green;
-        text-align: center;
-        font-size: 18px;
-    }
-    .border-title {
-        display: block;
-        width: 200px;
-        height: 1px;
-        margin: auto;
-        background: $pink;
+    .content {
+        margin-bottom: 40px;
+        .thumbnail {
+            margin-bottom: 20px;
+            text-align: center;
+            img {
+                -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+                -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+                box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+            }
+        }
+        .description {
+            h3 {
+                margin-bottom: 35px;
+                color: $green;
+                text-align: left;
+                font-size: 18px;
+            }
+            p {
+                color: $beige;
+                font-size: 16px;
+                font-weight: 100;
+                line-height: 24px;
+            }
+            .more {
+                display: inline-block;
+                margin-top: 20px;
+                color: $pink;
+                font-weight: 500;
+                font-size: 16px;
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 60px;
+                    height: 1px;
+                    margin-top: 10px;
+                    background-color: $pink;
+                }
+                .right {
+                    display: inline-block;
+                    width: $right-width;
+                    height: $right-height;
+                    margin-left: 20px;
+                    background-position: $right-offset-x $right-offset-y;
+                    background-image: url($spritesheet-image);
+                    transition: all ease 0.3s;
+                    -moz-transition: all ease 0.3s;
+                    -webkit-transition: all ease 0.3s;
+                }
+            }
+        }
     }
 }
 
@@ -362,12 +434,50 @@ header {
             }
         }
         .scroll-bot {
-            margin: 90px auto 0;
+            margin: 75px auto 0;
         }
     }
     #nath {
         h3 {
             font-size: 48px;
+        }
+    }
+    #print {
+        .content {
+            .thumbnail {
+                text-align: left;
+            }
+            .description {
+                text-align: left;
+            }
+            &:nth-child(odd) {
+                .thumbnail {
+                    float: right;
+                }
+                .description {
+                    float: right;
+                    padding: 0 15px;
+                }
+            }
+            &:nth-child(even) {
+                .thumbnail {
+                    float: left;
+                }
+                .description {
+                    float: left;
+                    padding: 0 15px;
+                    .more {
+                        &:hover {
+                            .right {
+                                margin-left: 10px;
+                                transition: all ease 0.3s;
+                                -moz-transition: all ease 0.3s;
+                                -webkit-transition: all ease 0.3s;
+                            }
+                        }                        
+                    }
+                }
+            }
         }
     }
 }
