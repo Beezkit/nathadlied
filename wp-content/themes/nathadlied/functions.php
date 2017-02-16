@@ -99,3 +99,31 @@ register_post_type(
         'has_archive' => true
     )
 );
+
+// CUSTOM POST TYPE PRINT
+register_post_type(
+   'Web',
+   array(
+        'label' => 'Mes Web',
+        'labels' => array(
+            'name' => 'Mes Web',
+            'singular_name' => 'Mes Web',
+            'all_items' => 'Tous Mes Web',
+            'add_new_item' => 'Ajouter un Web',
+            'edit_item' => 'Éditer le Web',
+            'new_item' => 'Nouveau Web',
+            'view_item' => 'Voir le Web',
+            'search_items' => 'Rechercher parmi les Web',
+            'not_found' => 'Pas de Web trouvée',
+            'not_found_in_trash'=> 'Pas de Web dans la corbeille'
+            ),
+        'public' => true,
+        'capability_type' => 'post',
+        'supports' => array(
+        	'title',
+        	'editor',
+            'thumbnail'
+        ),
+        'has_archive' => true
+    )
+);

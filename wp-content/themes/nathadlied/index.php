@@ -67,7 +67,32 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
+
                 <?php endwhile; } ?>
+
+                <?php
+                    // Get the ID of a given category
+                    $category_id = get_cat_ID( 'print' );
+
+                    // Get the URL of this category
+                    $category_link = get_category_link( $category_id );
+                ?>
+
+                <div class="text-center">
+                    <a href="<?php echo esc_url( $category_link ); ?>" class="more-all" title="Voir tout les portfolio">Voir tout les print</a>
+                </div>
+
+                <?php wp_reset_postdata(); ?>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <polygon points="100 0 100 10 0 10" />
+            </svg>
+        </div>
+
+        <div id="web">
+            <div class="container">
+                <h2>Web</h2>
+                <span class="border-title"></span>
             </div>
         </div>
 
