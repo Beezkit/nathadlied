@@ -3,7 +3,8 @@
 /* Thumbnails */
 add_theme_support( 'post-thumbnails' );
 the_post_thumbnail( 'full' );
-add_image_size('print', 510, '', true); //
+add_image_size('print', 510, '', true);
+add_image_size('web', 510, 275, true);
 
 remove_filter( 'the_excerpt', 'wpautop' );
 function custom_excerpt_length( $length ) {

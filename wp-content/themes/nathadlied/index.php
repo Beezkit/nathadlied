@@ -70,16 +70,8 @@
 
                 <?php endwhile; } ?>
 
-                <?php
-                    // Get the ID of a given category
-                    $category_id = get_cat_ID( 'print' );
-
-                    // Get the URL of this category
-                    $category_link = get_category_link( $category_id );
-                ?>
-
                 <div class="text-center">
-                    <a href="<?php echo esc_url( $category_link ); ?>" class="more-all" title="Voir tout les portfolio">Voir tout les print</a>
+                    <a href="<?php echo get_page_link(9); ?>" class="more-all" title="Voir tout les portfolio">Voir tout les print</a>
                 </div>
 
                 <?php wp_reset_postdata(); ?>
@@ -93,6 +85,34 @@
             <div class="container">
                 <h2>Web</h2>
                 <span class="border-title"></span>
+                <div class="row">
+                    <?php // The Query
+                    $the_query = new WP_Query( array( 'post_type' => 'Web', 'post_per_page' => '6' ) );
+                    if ( $the_query->have_posts() ) { ?>
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <div class="col-md-6 col-lg-4">
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <div class="thumbnail">
+                                    <?php the_post_thumbnail('web', array('class' => 'img-fluid')); ?>
+                                    <div class="description">
+                                        <h3><?php the_title(); ?></h3>
+                                        <p><?php the_excerpt(); ?></p>
+                                    </div>
+                                    <div class="read-more text-center">
+                                        <span class="more">Voir le projet</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endwhile; } ?>
+                        <div class="clearfix"></div>
+                </div>
+
+                <?php wp_reset_postdata(); ?>
+
+                <div class="text-center">
+                    <a href="<?php echo get_page_link(37); ?>" class="more-all" title="Voir tout les portfolio">Voir tout les web</a>
+                </div>
             </div>
         </div>
 
