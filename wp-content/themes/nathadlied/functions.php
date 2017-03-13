@@ -73,37 +73,58 @@ register_post_type(
     )
 );
 
-// CUSTOM POST TYPE PRINT
 register_post_type(
-   'Print',
-   array(
-        'label' => 'Mes Print',
-        'labels' => array(
-            'name' => 'Mes Print',
-            'singular_name' => 'Mes Print',
-            'all_items' => 'Tous Mes Print',
-            'add_new_item' => 'Ajouter un Print',
-            'edit_item' => 'Éditer le Print',
-            'new_item' => 'Nouveau Print',
-            'view_item' => 'Voir le print',
-            'search_items' => 'Rechercher parmi les Print',
-            'not_found' => 'Pas de print trouvée',
-            'not_found_in_trash'=> 'Pas de print dans la corbeille'
-            ),
-        'public' => true,
-        'capability_type' => 'post',
-        'supports' => array(
-        	'title',
-        	'editor',
-            'thumbnail'
-        ),
-        'has_archive' => true
-    )
+  'print-project',
+  array(
+    'label' => 'Mes print',
+    'labels' => array(
+      'name' => 'Mes print',
+      'singular_name' => 'Print',
+      'all_items' => 'Tous les print',
+      'add_new_item' => 'Ajouter un print',
+      'edit_item' => 'Éditer le print',
+      'new_item' => 'Nouveau print',
+      'view_item' => 'Voir le print',
+      'search_items' => 'Rechercher parmi les print',
+      'not_found' => 'Pas de print trouvé',
+      'not_found_in_trash'=> 'Pas de print dans la corbeille'
+      ),
+    'public' => true,
+    'capability_type' => 'post',
+    'supports' => array(
+      'title',
+      'editor',
+      'thumbnail'
+    ),
+    'has_archive' => true
+  )
 );
 
-// CUSTOM POST TYPE PRINT
+register_taxonomy(
+  'print',
+  'print-project',
+  array(
+    'label' => 'Catégories',
+    'labels' => array(
+    'name' => 'Catégories',
+    'singular_name' => 'Catégories',
+    'all_items' => 'Toutes les Catégories',
+    'edit_item' => 'Éditer une catégorie',
+    'view_item' => 'Voir la catégorie',
+    'update_item' => 'Mettre à jour une catégorie',
+    'add_new_item' => 'Ajouter une catégorie',
+    'new_item_name' => 'Nouvelle catégorie',
+    'search_items' => 'Rechercher parmi les catégories',
+    'popular_items' => 'Catégories les plus utilisés'
+  ),
+  'hierarchical' => true
+  )
+);
+register_taxonomy_for_object_type( 'print', 'print-project' );
+
+// CUSTOM POST TYPE Web
 register_post_type(
-   'Web',
+   'Projet Web',
    array(
         'label' => 'Mes Web',
         'labels' => array(
@@ -117,6 +138,34 @@ register_post_type(
             'search_items' => 'Rechercher parmi les Web',
             'not_found' => 'Pas de Web trouvée',
             'not_found_in_trash'=> 'Pas de Web dans la corbeille'
+            ),
+        'public' => true,
+        'capability_type' => 'post',
+        'supports' => array(
+        	'title',
+        	'editor',
+            'thumbnail'
+        ),
+        'has_archive' => true
+    )
+);
+
+// CUSTOM POST TYPE Personnel
+register_post_type(
+   'Personnal',
+   array(
+        'label' => 'Personnel',
+        'labels' => array(
+            'name' => 'Personnel',
+            'singular_name' => 'Personnel',
+            'all_items' => 'Tout mes projet personnel',
+            'add_new_item' => 'Personnel',
+            'edit_item' => 'Personnel',
+            'new_item' => 'Personnel',
+            'view_item' => 'Personnel',
+            'search_items' => 'Personnel',
+            'not_found' => 'Personnel',
+            'not_found_in_trash'=> 'Personnel'
             ),
         'public' => true,
         'capability_type' => 'post',
