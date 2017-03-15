@@ -177,3 +177,26 @@ register_post_type(
         'has_archive' => true
     )
 );
+
+// CUSTOM POST TYPE Personnel
+register_post_type(
+   'Confiance',
+   array(
+        'label' => 'Groupe confiance',
+        'labels' => array(
+            'name' => 'Groupe confiance',
+            'singular_name' => 'Groupe confiance',
+            'all_items' => 'Tout mes Groupe confiance',
+            'add_new_item' => 'Groupe confiance',
+            'edit_item' => 'Groupe confiance',
+            'new_item' => 'Groupe confiance',
+            'view_item' => 'Groupe confiance',
+            'search_items' => 'Groupe confiance',
+            'not_found' => 'Groupe confiance',
+            'not_found_in_trash'=> 'Groupe confiance'
+            ),
+        'public' => true,
+        'capability_type' => 'post',
+        'has_archive' => true
+    )
+);

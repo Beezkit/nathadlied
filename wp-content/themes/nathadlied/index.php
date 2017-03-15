@@ -157,4 +157,37 @@
             </div>
         </div>
 
+        <div id="reassurance">
+            <div class="container">
+                <div class="row">
+                    <?php // The Query
+                    $the_query = new WP_Query( array( 'category_name' => 'reassurances', 'post_per_page' => '4', 'order' => 'ASC' ) );
+                    if ( $the_query->have_posts() ) { ?>
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <div class="col-md-6 col-lg-3 text-center">
+                            <?php the_post_thumbnail(); ?>
+                            <h4><?php the_title(); ?></h4>
+                        </div>
+                    <?php endwhile; } ?>
+                </div>
+            </div>
+        </div>
+
+        <div id="confiance">
+            <h2>Ils me font confiance</h2>
+            <span class="border-title"></span>
+            <div class="container">
+                <?php
+                	$images= get_field('confiance',75);
+
+                	if( $images ):  ?>
+                	<ul class="owl-carousel owl-theme">
+                		<?php foreach( $images as $image ): ?>
+                		<li class="item"><img src="<?php echo $image['logo']['url']; ?>" class="img-fluid" alt="<?php echo $image['logo']['alt']; ?>" /></li>
+                		 <?php endforeach; ?>
+                	</ul>
+                	<?php endif; ?>
+            </div>
+        </div>
+
 <?php get_footer(); ?>
