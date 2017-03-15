@@ -64,7 +64,7 @@
     </div>
     <div class="made-by">
         Copyright 2017 <a href="<?php echo home_url(); ?>">NathadlieD</a> / Site fait main par <a href="http://www.guillaume-delforge.fr" target="blank">DELFORGE Guillaume</a>
-    </div>
+    </div> 
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/owl/owl.carousel.min.js"></script>
