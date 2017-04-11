@@ -22,4 +22,11 @@ $( document ).ready(function() {
         }
     });
 
+    $('.grid').masonry({
+        // options
+        itemSelector: '.content-print', // use a separate class for itemSelector, other than .col-
+        columnWidth: '.content-print',
+        percentPosition: true
+    });
+
 });

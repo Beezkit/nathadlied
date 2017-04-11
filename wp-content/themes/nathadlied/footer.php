@@ -5,16 +5,7 @@
             <span class="border-title"></span>
             <div class="col-md-6 col-lg-3">
                 <p class="title-footer">Dernier projet print</p>
-                <?php $terms = get_terms( 'print' );?>
-                <ul>
-                <?php foreach ($terms as $term) {
 
-                $term_link = get_term_link($term); ?>
-                <li>
-                    <a href="<?php echo esc_url( $term_link ); ?>" title="<?php echo $term->name; ?>">- <?php echo $term->name; ?></a>
-                </li>
-                <?php } ?>
-                </ul>
             </div>
             <div class="col-md-6 col-lg-3">
                 <p class="title-footer">Dernier projet web</p>
@@ -64,10 +55,11 @@
     </div>
     <div class="made-by">
         Copyright 2017 <a href="<?php echo home_url(); ?>">NathadlieD</a> / Site fait main par <a href="http://www.guillaume-delforge.fr" target="blank">DELFORGE Guillaume</a>
-    </div> 
+    </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/owl/owl.carousel.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/masonry/masonry.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/global.min.js"></script>
 </body>
 </html>

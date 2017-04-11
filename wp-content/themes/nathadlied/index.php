@@ -53,27 +53,34 @@
                 <h2>Print</h2>
                 <span class="border-title"></span>
                     <div class="content col-lg-8 offset-lg-2">
-                        <?php $terms = get_terms( 'print' );
+                        <?php $terms = get_categories( array(
+                            'exclude' => '1, 6',
+                            'hide_empty' => 0
+                        ));
 
-                        foreach ($terms as $term) {
+                        foreach ($terms as $i => $term) {
 
                         $term_link = get_term_link($term); ?>
+                            <?php if ($i <= 3) { ?>
 
-                        <div class="col-lg-6 thumbnail">
-                            <?php $custom_field = get_field('image', $term ); ?>
-                            <img src="<?php echo $custom_field["sizes"]["print"]; ?>" class="img-fluid" />
-                        </div>
-                        <div class="col-lg-6 description">
-                            <h3><?php echo $term->name; ?></h3>
-                            <p><?php echo $term->description; ?></p>
-                            <a href="<?php echo esc_url( $term_link ); ?>" class="more" title="En savoir plus">En savoir plus <span class="right"></span></a>
-                        </div>
+                            <div class="content-print">
+                                <div class="col-lg-6 thumbnail">
+                                    <?php $custom_field = get_field('image', $term ); ?>
+                                    <img src="<?php echo $custom_field["sizes"]["print"]; ?>" class="img-fluid" />
+                                </div>
+                                <div class="col-lg-6 description">
+                                    <h3><?php echo $term->name; ?></h3>
+                                    <p><?php echo $term->description; ?></p>
+                                    <a href="<?php echo esc_url( $term_link ); ?>" class="more" title="En savoir plus">En savoir plus <span class="right"></span></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <?php } ?>
                         <?php } ?>
-                        <div class="clearfix"></div>
                     </div>
-
+                <?php $link_term = get_term_link($term); ?>
                 <div class="text-center">
-                    <a href="<?php echo get_page_link(9); ?>" class="more-all" title="Voir tout les portfolio">Voir tout les print</a>
+                    <a href="<?php echo $link_term; ?>" class="more-all" title="Voir tout les portfolio">Voir tout les print</a>
                 </div>
 
                 <?php wp_reset_postdata(); ?>
