@@ -1,5 +1,10 @@
 <?php
 
+add_action('get_header', 'remove_admin_login_header');
+function remove_admin_login_header() {
+	remove_action('wp_head', '_admin_bar_bump_cb');
+}
+
 /* Thumbnails */
 add_theme_support( 'post-thumbnails' );
 the_post_thumbnail( 'full' );
@@ -127,11 +132,11 @@ register_taxonomy_for_object_type( 'print', 'prints' );*/
 
 // CUSTOM POST TYPE Web
 register_post_type(
-   'Projet Web',
+   'web',
    array(
-        'label' => 'Mes Web',
+        'label' => 'Web',
         'labels' => array(
-            'name' => 'Mes Web',
+            'name' => 'Web',
             'singular_name' => 'Mes Web',
             'all_items' => 'Tous Mes Web',
             'add_new_item' => 'Ajouter un Web',
@@ -155,7 +160,7 @@ register_post_type(
 
 // CUSTOM POST TYPE Personnel
 register_post_type(
-   'Personnal',
+   'Personnel',
    array(
         'label' => 'Personnel',
         'labels' => array(

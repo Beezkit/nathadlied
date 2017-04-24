@@ -96,7 +96,7 @@
                 <span class="border-title"></span>
                 <div class="row">
                     <?php // The Query
-                    $the_query = new WP_Query( array( 'post_type' => 'Web', 'post_per_page' => '6' ) );
+                    $the_query = new WP_Query( array( 'post_type' => 'Projet Web', 'post_per_page' => '6' ) );
                     if ( $the_query->have_posts() ) { ?>
                     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                         <div class="col-md-6 col-lg-4">
@@ -135,7 +135,7 @@
                 <span class="border-title"></span>
                 <div class="row">
                 <?php // The Query
-                $the_query = new WP_Query( array( 'post_type' => 'Personnal', 'post_per_page' => '4' ) );
+                $the_query = new WP_Query( array( 'post_type' => 'personnel', 'post_per_page' => '4' ) );
                 if ( $the_query->have_posts() ) { ?>
                 <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                     <div class="col-md-6 col-lg-3">

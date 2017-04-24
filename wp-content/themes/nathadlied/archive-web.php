@@ -1,5 +1,10 @@
+<?php
+/**
+ * Template Name: Web
+ *
+ */
+?>
 <?php get_header(); ?>
-
 <div class="container">
     <div id="breadcrumb">
         <?php
@@ -8,10 +13,13 @@
         }
         ?>
     </div>
-    <h2><?php single_cat_title(); ?></h2>
+    <h2>Web</h2>
     <span class="border-title"></span>
     <div class="row grid">
-        <?php while ( have_posts() ) : the_post(); ?>
+        <?php // The Query
+        $the_query = new WP_Query( array( 'post_type' => 'web' ) );
+        if ( $the_query->have_posts() ) { ?>
+        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <div class="content-print col-lg-4">
                 <div class="content">
                     <a href="<?php the_permalink(); ?>">
@@ -27,7 +35,8 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-        <?php endwhile; ?>
+        <?php endwhile; } ?>
     </div>
+    <?php wp_reset_postdata(); ?>
 </div>
 <?php get_footer(); ?>

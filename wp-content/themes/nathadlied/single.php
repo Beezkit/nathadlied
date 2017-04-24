@@ -18,13 +18,19 @@
     <div class="row">
         <div class="content col-lg-8">
             <?php the_content(); ?>
+            <?php $lien = get_field('lien');
+            if ($lien != NULL) { ?>
+            <div class="text-center">
+                <a href="<?php echo $lien; ?>" target="_blank" class="more-all" title="Voir le site">Voir le site</a>
+            </div>
+            <?php } ?>
         </div>
         <div class="content col-lg-4">
             <?php
                 $images= get_field('images');
                 if( $images ):
             ?>
-            <div class="row">
+            <div class="row block-img">
                 <?php foreach( $images as $image ): ?>
                 <div class="col-sm-6">
                     <img src="<?php echo $image['image']; ?>" class="img-fluid" />

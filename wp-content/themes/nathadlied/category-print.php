@@ -20,7 +20,7 @@
 
         $term_link = get_term_link($term); ?>
 
-            <div class="content-print col-lg-3">
+            <div class="content-print col-lg-4">
                 <div class="content">
                     <a href="<?php echo esc_url( $term_link ); ?>">
                         <h3><?php echo $term->name; ?></h3>

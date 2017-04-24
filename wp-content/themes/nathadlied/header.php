@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/owl/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/owl/owl.theme.default.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/fancybox/jquery.fancybox.css" type="text/css">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
 
     <?php wp_head(); ?>
@@ -31,6 +32,11 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" class="img-fluid" alt="Logo NathaDlieD" />
                 <h1><?php bloginfo( 'description' ); ?></h1>
             <?php } ?>
+        </div>
+        <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <nav>
             <?php wp_nav_menu( array( 'theme_location' => 'Top' ) ); ?>
