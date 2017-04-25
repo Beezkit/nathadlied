@@ -51,7 +51,10 @@
 
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 15,
-		          center: myLatLng
+		          center: myLatLng,
+				  mapTypeControl: false,
+				  zoomControl: false,
+				  streetViewControl: false
 		        });
 
 				var iconBase = '/wp-content/themes/nathadlied/images/';
