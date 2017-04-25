@@ -48,6 +48,7 @@
                     <li>
                         <a href="<?php the_field('facebook', 81); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
                     </li>
+                    <?php /*
                     <li>
                         <a href="<?php the_field('google_plus', 81); ?>" target="_blank"><i class="fa fa-google-plus"></i></a>
                     </li>
@@ -56,7 +57,7 @@
                     </li>
                     <li>
                         <a href="<?php the_field('twitter', 81); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
-                    </li>
+                    </li> */ ?>
                     <li class="clearfix"></li>
                 </ul>
             </div>
