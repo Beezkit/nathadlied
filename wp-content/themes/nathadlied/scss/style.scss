@@ -207,6 +207,7 @@ header {
         margin: 20px auto 0;
         background-position: $polygone-offset-x $polygone-offset-y;
         background-image: url($polygone-image);
+        cursor: pointer;
         z-index: 10;
         .icon-down {
             position: absolute;
