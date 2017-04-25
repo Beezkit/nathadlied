@@ -62,4 +62,12 @@ $( document ).ready(function() {
         });
     });
 
+    $('.scroll-bot').on('click', function() { // Au clic sur un élément
+		var speed = 1500; // Durée de l'animation (en ms)
+        var page = $('#nath');
+        $('html, body').animate( {
+            scrollTop: $(page).offset().top
+        }, speed, 'swing', function(){}); // Go
+	});
+
 });
